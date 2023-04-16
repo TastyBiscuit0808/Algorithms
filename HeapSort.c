@@ -3,12 +3,13 @@
 
 // Min Heap
 
-void heapify(int h[], int n, int i) 
+void heapify(int h[], int n, int i) // Maintians heap property
 {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
+    // Finding the largest among the root and the nodes just before the leaves
     if (left < n && h[left] > h[largest])
     {
         largest = left;
@@ -18,7 +19,7 @@ void heapify(int h[], int n, int i)
     {
         largest = right;
     }
-
+    // swapping if greater
     if (largest != i) 
     {
       int t = h[i];
@@ -30,10 +31,11 @@ void heapify(int h[], int n, int i)
 
 void heapsort(int h[], int n)
 {
-    for(int i = n/2 -1;i>=0;i--)
+    for(int i = n/2 -1;i>=0;i--) // Max Heap construction
     {
         heapify(h,n,i);
     }
+    // Heapsort
     for(int i = n-1;i>=0;i--)
     {
         int t = h[0];
