@@ -32,7 +32,7 @@ void horspool(char *text, char *pattern)
         while(k<m && pattern[m-1-k] == text[i-k])
         {  
             k++;
-        }4
+        }
         if(k == m)
         {
             printf("Pattern found at index %d\n", i-m+1);
